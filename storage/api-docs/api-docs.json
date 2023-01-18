@@ -1,0 +1,101 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "L5 OpenApi",
+        "description": "L5 Swagger OpenApi description",
+        "contact": {
+            "email": "darius@matulionis.lt"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0",
+        "x-logo": {
+            "url": "https://via.placeholder.com/190x90.png?text=L5-Swagger"
+        }
+    },
+    "paths": {
+        "/api/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "operationId": "ab015cc2055ac75e6d23c628675c26e7",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "To find specific product",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/create-product": {
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "operationId": "5ef1c8dec13c77024b1ae9ae3a0e08c4",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "detail": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/delete-product/{id}": {
+            "delete": {
+                "tags": [
+                    "Products"
+                ],
+                "operationId": "f9447302a44d16914adcbd02c5a6e874",
+                "requestBody": {
+                    "content": {
+                        "json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        }
+    }
+}
