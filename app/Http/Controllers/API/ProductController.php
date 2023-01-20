@@ -55,11 +55,11 @@ class ProductController extends Controller
         $name = $input['name'] ?? "";
         if(!empty($name))
         {
-            $products = Product::where("name","LIKE","%$name%")->paginate(2);
+            $products = Product::where("name","LIKE","%$name%")->paginate(15);
             return response()->json($products,200,['Content-Type'=>'application/json;charset-UTF-8','Charset' => 'utf-8'],JSON_UNESCAPED_UNICODE);
         }
 
-        $products = Product::paginate(2);
+        $products = Product::paginate(15);
         return response()->json($products,200,['Content-Type'=>'application/json;charset-UTF-8','Charset' => 'utf-8'],JSON_UNESCAPED_UNICODE);
 
     }
